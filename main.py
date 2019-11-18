@@ -1,11 +1,15 @@
 
 import random
+
 from functions import *
+
+from data import *
+
+
+username=name_choice()
 continue_game=True
 while continue_game==True:
 
-    words_list = ["armoire","boucle","buisson","bureau","chaise","carton","couteau","fichier","garage"
-    ,"glace","journal","kiwi","lampe","liste","montagne","remise","sandale","taxi","vampire","volant",]
     word =random.choice(words_list)
     list1=[]
     your_list=[]
@@ -20,7 +24,7 @@ while continue_game==True:
     while nb_error < 8 :
         letter = input("Enter your letter")
 
-        if len(letter)>1:
+        if len(letter) > 1:
             if letter == word:
                 print("you find the word")
                 break
