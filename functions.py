@@ -1,5 +1,7 @@
 import random
 
+import pickle
+
 def name_choice():
     """this function allow the player to choose enter a name or pseudo """
     username=""
@@ -24,7 +26,7 @@ def collect_scores():
 def save_scores(scores):
     """this function save score on score"""
 
-    file_scores = open(name_file_scores, "wb") # 
+    file_scores = open(name_file_scores, "wb") #
     save_file = pickle.Pickler(file_scores)
     save_file.dump(scores)
     fichier_scores.close()

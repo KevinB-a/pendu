@@ -5,20 +5,21 @@ from functions import *
 
 from data import *
 
+import pickle
 
 username=name_choice()
 continue_game=True
 while continue_game== True:
 
     word =random.choice(words_list) # choose random word in words_list
-    list1=[]
-    your_list=[]
+    word_letter_list=[]
+    hidden_word=[]
 
     for el in word:
-        list1.append(el) # add every letter in list1
-        your_list.append('*') # add * for every letter in word
+        word_letter_list.append(el) # add every letter in list1
+        hidden_word.append('*') # add * for every letter in word
 
-    print("".join(your_list)) # change your_list in str
+    print("".join(hidden_word)) # change your_list in str
 
     nb_error = 0 # initialize number of error
     while nb_error < 8 :
@@ -30,13 +31,13 @@ while continue_game== True:
                 break
 
         if letter in list1:
-            for index,element in enumerate(list1): 
+            for index,element in enumerate(list1): # list index and element in list
                 if element==letter:
-                    your_list[index] = element # change * by letter if letter is in word
-            good_letter = ''.join(your_list)
+                    hidden_word[index] = element # change * by letter if letter is in word
+            good_letter = ''.join(hidden_word)
             print("good letter ",good_letter)
 
-            if list1==your_list:
+            if word_letter_list==hidden_word:
                 print("you find the word")
                 break
         else:
@@ -49,7 +50,7 @@ while continue_game== True:
     your_score=8-nb_error
     print("your score is",your_score)
     restart=input("do you want to play again ? enter yes for restart and no for quit").lower()
-    if restart =="yes" or rematch == "y" or rematch =="oui" or rematch == "o" :
+    if restart =="yes" or restart == "y" or restart =="oui" or restart == "o" :
         continue_game = True #if user choose stop the game continue_game become false and while loop stop
     else:
         continue_game = False #restart the game if user wants
