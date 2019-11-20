@@ -7,13 +7,10 @@ from data import *
 
 import pickle
 
-username=name_choice() #call function name_choice
+username=name_choice() # call function name_choice
 continue_game=True
-while continue_game== True:
+while continue_game == True:
 
-    word = random_choice()
-    word_letter_list=[]
-    hidden_word=[]
     number_of_errors()
     restart=input("do you want to play again ? enter yes for restart and no for quit").lower()
     if restart in ["yes","y","oui","o"] :
