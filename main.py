@@ -7,7 +7,7 @@ from data import *
 
 import pickle
 
-username=name_choice()
+username=name_choice() #call function name_choice
 continue_game=True
 while continue_game== True:
 
@@ -30,8 +30,8 @@ while continue_game== True:
                 print("you find the word")
                 break
 
-        if letter in list1:
-            for index,element in enumerate(list1): # list index and element in list
+        if letter in word_letter_list:
+            for index,element in enumerate(word_letter_list): # list index and element in list
                 if element==letter:
                     hidden_word[index] = element # change * by letter if letter is in word
             good_letter = ''.join(hidden_word)
@@ -50,7 +50,7 @@ while continue_game== True:
     your_score=8-nb_error
     print("your score is",your_score)
     restart=input("do you want to play again ? enter yes for restart and no for quit").lower()
-    if restart =="yes" or restart == "y" or restart =="oui" or restart == "o" :
+    if restart in ["yes","y","oui","o"] :
         continue_game = True #if user choose stop the game continue_game become false and while loop stop
     else:
         continue_game = False #restart the game if user wants
