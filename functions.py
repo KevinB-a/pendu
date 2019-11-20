@@ -13,13 +13,13 @@ def name_choice():
 def collect_scores():
     """this function collect score of the player"""
 
-    if os.path.exists(name_file_scores): # Le fichier existe
-        # On le récupère
+    if os.path.exists(name_file_scores): # if file exist 
+        # i collect the file
         file_scores = open(name_file_scores, "rb")
         collect_file = pickle.Unpickler(file_scores)
         scores = collect_file.load()
         fichier_scores.close()
-    else: # Le fichier n'existe pas
+    else: # this file doesn't exist
         scores = {}
     return scores
 
