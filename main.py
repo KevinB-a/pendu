@@ -7,7 +7,10 @@ from data import *
 
 import pickle
 
+scores=collect_scores()
 username=name_choice() # call function name_choice
+#if username not in scores.keys():
+#    scores[username] = 0
 continue_game=True
 while continue_game == True:
 
@@ -17,3 +20,5 @@ while continue_game == True:
         continue_game = True #if user choose stop the game continue_game become false and while loop stop
     else:
         continue_game = False #restart the game if user wants
+
+#save_scores(scores)
