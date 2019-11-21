@@ -1,3 +1,5 @@
+import os
+
 import random
 
 import pickle
@@ -49,6 +51,7 @@ def number_of_errors():
     if nb_error ==8:
         print("you don't find the word")
     your_score=8-nb_error
+    #scores[username] = your_score
     print("your score is",your_score)
     return hidden_word ,your_score
 
