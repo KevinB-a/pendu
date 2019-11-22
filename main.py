@@ -6,14 +6,14 @@ from functions import *
 from data import *
 
 import pickle
-
-scores=collect_scores()
-username=name_choice() # call function name_choice
-#if username not in scores.keys():
-#    scores[username] = 0
+"""save_scores()
+if name_choice() not in scores.keys():
+    scores[name_choice()] = 0
+scores=collect_scores()"""
 continue_game=True
 while continue_game == True:
 
+    username=name_choice()  # call function name_choice
     number_of_errors()
     restart=input("do you want to play again ? enter yes for restart and no for quit").lower()
     if restart in ["yes","y","oui","o"] :
@@ -21,4 +21,4 @@ while continue_game == True:
     else:
         continue_game = False #restart the game if user wants
 
-#save_scores(scores)
+#save_scores()
